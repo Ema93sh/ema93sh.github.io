@@ -41,6 +41,11 @@
     {% if site.enable_mathjax %}
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: {extensions: ["AMSmath.js","AMSsymbols.js", "extpfeil.js"]}
+      });
+    </script>
     {% endif %}
 
     <!-- Verifications -->
@@ -95,4 +100,7 @@
        ga('send', 'pageview');
     </script>
     {% endif %}
+    <!-- MathJax -->
+
+
 </head>
