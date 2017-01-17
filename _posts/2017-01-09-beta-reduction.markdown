@@ -182,6 +182,8 @@ $$
        \end{aligned}
 \end{align*}
 $$
+
+
 We see that the final evaluation result remains the same regardless of the path taken
 during beta reduction. Alonzo Church and Barkley Rosser proved in 1936 that choosing
 the order of redux does not change the result after the final termination.
@@ -242,6 +244,7 @@ $$
   &\mapsto yy
 \end{align*}
 $$
+
 This type of reduction corresponds to *call by name* parameter passing mechanism.
 If a normal form exists for a lambda expression then normal order reduction will find it.
 For the previous non-terminating example when we use normal order reduction strategy instead
