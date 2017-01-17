@@ -209,10 +209,11 @@ Since a lambda expression can have multiple reduxes, we need a strategy to choos
 The number of reductions needed to arrive at the normal form depends on the startegy used.
 Languages based on lambda calculus employ different strategies to choose the redux.
 The most common strategies are:
+
 * Applicative Order
 * Normal Order
 
-## Applicative Order
+### Applicative Order
 In applicative order reduction, the leftmost of the innermost redux is always choosen. For example:
 
 $$
@@ -239,7 +240,7 @@ $$
 \end{align*}
 $$
 
-## Normal Order
+### Normal Order
 In normal order reduction, the leftmost redex is always choosen. For example:
 
 $$
@@ -284,6 +285,9 @@ arrive at the normal form.
 $$\beta$$-reduction plays an important role in understanding the semantics of lambda calculus.
 It along with the reduction strategies defines the basis for evaluating a lambda calculus
 expression.
+
+[Article in PDF format]({{ site.url }}/static-files/beta_reduction.pdf)
+
 
 ## References
 [http://www.cs.yale.edu/homes/hudak/CS201S08/lambda.pdf](http://www.cs.yale.edu/homes/hudak/CS201S08/lambda.pdf)
