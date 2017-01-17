@@ -2,7 +2,10 @@
 layout: post
 title:  "Beta Reduction"
 date:   2017-01-09 12:10:01 -0600
-categories: programming language design
+categories:
+      - Programming language design
+tags:
+      - research
 ---
 
 
@@ -58,7 +61,8 @@ Informally it is the application of lambda abstraction on to its arguments and i
  (\lambda x.e_1)e_2 \mapsto [e_2/x]e_1
 \\]
 The term $$[e_2/x]e_1$$ means substitute $$e_2$$ for every occurance of $$x$$ in $$e_1$$.
-Some examples of beta reduction:  
+Some examples of beta reduction:
+
 $$\begin{align*}
   (\lambda x.x)y \\
        &\begin{aligned}
@@ -223,6 +227,7 @@ This type of reduction corresponds to *call by value* parameter passing mechanis
 this strategy is that the arguments are evaluated exactly once. However, if we choose this strategy,
 it has the possiblility to end up in an expression that does not terminate.
 For example:
+
 $$
 \begin{align*}
   (\lambda x. x y)(\underline{(\lambda x. x x)(\lambda x. x x)}) \\
@@ -234,6 +239,7 @@ $$
 
 ## Normal Order
 In normal order reduction, the leftmost redex is always choosen. For example:
+
 $$
 \begin{align*}
   \underline{(\lambda x. x x)((\lambda xy. y x)y)} \\
