@@ -2,8 +2,7 @@
 layout: post
 title:  "Beta Reduction"
 date:   2017-01-09 12:10:01 -0600
-categories:
-      - Programming language design
+categories: programming-language-design
 tags:
       - research
 ---
