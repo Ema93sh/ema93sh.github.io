@@ -2,9 +2,9 @@
 title:       Magesh Kumar
 email:       m.magesh.66@gmail.com
 author:      Magesh Kumar Murali
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+description: "Personal Website - Thoughts from a programmer's prespective."
 baseurl:     ""
-url:         "http://mageshkumar.com"
+url:         "http://www.mageshkumar.com"
 date_format: "%b %-d, %Y"
 
 # Google services

@@ -22,6 +22,7 @@ The calculus is known for its simplicity. The language consists of three simple 
 * Application - the application of lambda abstraction on an input term
 
 The syntax of lambda calculus is given by:  
+
 $$
 \begin{align*}
   \langle expression \rangle &:= \langle name \rangle  |  \langle function \rangle  |  \langle application \rangle\\
@@ -31,6 +32,7 @@ $$
 $$
 
 The following are all valid lambda calculus expressions:
+
 $$
 \begin{align*}
   \text{id}   &=\lambda x. x \tag*{(Identity function)} \\
