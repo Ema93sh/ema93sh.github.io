@@ -164,7 +164,7 @@ $$
 where $$FV(e)$$ is the set of free variables in the expression $$e$$
 
 ## Chruch Rosser Theorm
-A lambda expression can have multiple reduxes ( a term that can be reduced using beta reduction ).
+A lambda expression can have multiple redexes ( a term that can be reduced using beta reduction ).
 Since the semantics of lambda calculus is non-deterministic (i.e) it does not give us the order to perform these reduction,
 there can be multiple paths taken while performing beta reduction. For example:
 
@@ -191,7 +191,7 @@ $$
 
 We see that the final evaluation result remains the same regardless of the path taken
 during beta reduction. Alonzo Church and Barkley Rosser proved in 1936 that choosing
-the order of redux does not change the result after the final termination.
+the order of redex does not change the result after the final termination.
 This proof is commonly known as Church Rosser Theorm. The theorm is stated as follows:
 
 
@@ -204,16 +204,16 @@ An important corollary of the Church Rosser Theorm is that any lambda expression
 at most one normal form.
 
 ## Reduction Strategies
-Since a lambda expression can have multiple reduxes, we need a strategy to choose the next redux to reduce.
+Since a lambda expression can have multiple redexes, we need a strategy to choose the next redex to reduce.
 The number of reductions needed to arrive at the normal form depends on the startegy used.
-Languages based on lambda calculus employ different strategies to choose the redux.
+Languages based on lambda calculus employ different strategies to choose the redex.
 The most common strategies are:
 
 * Applicative Order
 * Normal Order
 
 ### Applicative Order
-In applicative order reduction, the leftmost of the innermost redux is always choosen. For example:
+In applicative order reduction, the leftmost of the innermost redex is always choosen. For example:
 
 $$
 \begin{align*}
@@ -266,7 +266,7 @@ $$
 \end{align*}
 $$
 
-One disadvantage of using normal order reduction is that the reduxes on the arguments maybe copied.
+One disadvantage of using normal order reduction is that the redexes on the arguments maybe copied.
 For example:
 
 $$
@@ -294,7 +294,5 @@ expression.
 [http://www.inf.fu-berlin.de/lehre/WS03/alpi/lambda.pdf](http://www.inf.fu-berlin.de/lehre/WS03/alpi/lambda.pdf)
 
 [https://en.wikipedia.org/wiki/Lambda_calculus](https://en.wikipedia.org/wiki/Lambda_calculus)
-
-[http://web.engr.oregonstate.edu/~walkiner/teaching/cs581-fa16/](http://web.engr.oregonstate.edu/~walkiner/teaching/cs581-fa16/)
 
 [http://prl.ccs.neu.edu/blog/2016/11/02/beta-reduction-part-1/](http://prl.ccs.neu.edu/blog/2016/11/02/beta-reduction-part-1/)
