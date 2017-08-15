@@ -5,7 +5,11 @@
     {% if page.tags contains "about" %}
         <a href="{{ page.url }}">{{ page.title }}</a>
     {% endif %}
+
 {% endfor %}
+
+    <a href="{{ "/static-files/pdfs/magesh kumar resume.pdf" | prepend: site.baseurl }}">Resume</a>
+
 {% for page in site.pages %}
     {% if page.tags contains "contact" %}
         <a href="{{ page.url }}">{{ page.title }}</a>

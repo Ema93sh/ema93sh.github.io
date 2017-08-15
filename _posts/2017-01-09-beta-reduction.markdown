@@ -8,7 +8,7 @@ tags:
 ---
 
 
-## Introduction
+
 Lambda($$\lambda$$) calculus was developed by American mathematician Alonzo Church in 1930s.
 It is a turning complete language (i.e) any computation that can be represented by a single taped turing
 machine can be expressed by lambda calculus. Lambda calculus is the theoretical basis
@@ -285,7 +285,10 @@ $$\beta$$-reduction plays an important role in understanding the semantics of la
 It along with the reduction strategies defines the basis for evaluating a lambda calculus
 expression.
 
-[Article in PDF format]({{ site.url }}/static-files/beta_reduction.pdf)
+If want to play around with lambda calculus to get a better understanding, try out a simple REPL I created for
+lambda calculus in Haskell. [Lambda Calculus REPL](https://github.com/Ema93sh/lambda-calculus-interpreter)
+
+[Article in PDF format]({{ site.url }}/static-files/pdfs/beta_reduction.pdf)
 
 
 ## References
