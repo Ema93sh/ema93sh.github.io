@@ -12,6 +12,8 @@ tags:
 
 Feedforward neural network also known as **Multilayer Perceptrons (MLPs)** are the quintessential models of deep learning. The goal of the network is to generate an approximation of a function $$f^{\ast}$$. It defines a mapping $$ y = f(x;\theta) $$ where it learns the value $$ \theta $$ to get the best approximation of the function $$ f^{\ast} $$. Since a neural network with a single hidden unit is able to approximate any continuous function, they are also known as *Universal Function Approximators*. In this model of neural network, the information flows through in a single direction, from the input nodes $$ x $$ to the hidden nodes and then finally through the output nodes. There is no cycle or feedback connections in this network. Hence the name *Feedforward*.
 
+<a id="read-more"></a>
+
 The best way to understand a feedforward network is by representing it with a [*Directed Acyclic Graph*](https://en.wikipedia.org/wiki/Directed_acyclic_graph) (DAG)
 where the nodes of the DAG are functions. Each path in this DAG represents a composition of functions ordered by
 the nodes in the path. For example, Consider a simple neural network represented by the following DAG with a single path:  

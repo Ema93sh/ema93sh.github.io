@@ -15,6 +15,7 @@ machine can be expressed by lambda calculus. Lambda calculus is the theoretical 
 for many of the modern functional programming languages like OCaml, ML, Haskell and Lisp.
 It is also commonly used as the formal language of discourse in the field of programming language research.
 The calculus is known for its simplicity. The language consists of three simple concepts:
+<a id="read-more"></a>
 
 * Variables/Names - can be numbers or letters
 * Lambda abstraction - denoted by the greek letter $$\lambda$$
