@@ -5,13 +5,10 @@ permalink: /about/
 tags: about
 ---
 
-<!-- ![About Me](/images/about me.png) -->
-
-
-Hi! I am Magesh Kumar, Computer Science graduate student and **Research Assistant** at Oregon State University. I also have three years of professional software development experience working at [**ThoughtWorks**](https://www.thoughtworks.com/).
+Hi! I am Magesh Kumar, Computer Science graduate student and **Research Assistant** at Oregon State University. I have three years of professional software development experience working at [**ThoughtWorks**](https://www.thoughtworks.com/).
 
 Currently working as part of the [DARPA XAI team](http://oregonstate.edu/ua/ncs/archives/2017/jun/research-aims-make-artificial-intelligence-explain-itself). The goal of
-my research project is to develop a programming language that makes it easier for non experts to create intelligent AI agents that is able to explains itself.
+my research project is to develop a programming language that makes it easier for non experts to create intelligent AI agents that is able to explain itself.
 
 #### Interests:
     * Programming language theory

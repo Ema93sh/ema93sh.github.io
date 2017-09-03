@@ -32,17 +32,17 @@ To determine if an estimator is a good estimator we have a few properties associ
   * Bias
   * Consistency
 
-The goal of a machine learning algorithm is to find a an estimator that has good properties associated with it (low bias, low variance and consistent are some good properties for an estimator).
+The goal of a machine learning algorithm is to find an estimator that has good properties associated with it (low bias, low variance and consistent are some good properties for an estimator).
 But it is difficult to find estimators that has good properties. Instead of defining an estimator and checking
 whether it has good properties, it is better if a general principle for deriving these good estimators. There are many such
-principles in statistics and one such principle is the Maximum likelihood estimation.
+principles in statistics and one such principle is the *Maximum likelihood estimation*.
 
 ### Maximum Likelihood Estimation
 
 Let $$ X = \left\{x_1, x_2, ... , x_m\right\} $$ be a identical and independently distributed sample data drawn from a
 unknown distribution given by $$ p_{data}(x) $$ and let $$ p_{model}(y | x,\theta) $$  be a parametric model that defines a probability distribution of y for a specific value of $$ \theta $$.
 
-The goal is to give a good estimator for $$\theta$$. In **Maximum Likelihood Estimation (MLE)** the estimator $$\hat\theta$$ is defined as:
+The goal is to give a good estimator for $$\theta$$. In *Maximum Likelihood Estimation (MLE)* the estimator $$\hat\theta$$ is defined as:
 
 $$
 \DeclareMathOperator*{\argmax}{argmax}
@@ -63,8 +63,8 @@ affect the argmax function and hence maintains the equality
 $$
 \begin{align}
 
-\hat\theta &= log ( \argmax_{\theta} p_{model}(X,\theta) )\\
-           &= \argmax_{\theta} \sum_{i=1}^{m} log ( p_{model}(x_i;\theta) )
+\hat\theta &= log ( \argmax_{\theta} \prod_{i=1}^{m} p_{model}(x_i;\theta) )\\
+           &= \argmax_{\theta} \sum_{i=1}^{m} log \  p_{model}(x_i;\theta)
 
 \end{align}
 $$
@@ -74,8 +74,8 @@ Because the argmax does not change when we scale it, we divide by *m*.
 $$
 \begin{align}
 
-\hat\theta &= \argmax_{\theta} (1 / m) * \sum_{i=1}^{m} log ( p_{model}(x_i;\theta) ) \\
-           &= \argmax_{\theta} E_{x \sim p_{data}}[log ( p_{model}(x;\theta))]
+\hat\theta &= \argmax_{\theta} (1 / m) * \sum_{i=1}^{m} log \   p_{model}(x_i;\theta)  \\
+           &= \argmax_{\theta} E_{x \sim p_{data}}[log \   p_{model}(x;\theta)]
 
 \end{align}
 $$
@@ -84,15 +84,91 @@ The Expection is with respect to the empirical distribution $$ p_{data} $$. We c
 express this in minimization form:
 
 $$
-\hat\theta = - \argmin_{\theta} E_{x \sim p_{data}}[log ( p_{model}(x;\theta))]
+\hat\theta = - \argmin_{\theta} E_{x \sim p_{data}}[log \   p_{model}(x;\theta)]
 $$
 
-An estimator that is derived from Maximum Likelihood Principle will have the important
+The reason for considering *Maximum Likelihood Estimation* as an important principle for deriving
+good estimator is because an estimator that is derived from Maximum Likelihood Principle will have the important
 property of **[consistency](https://en.wikipedia.org/wiki/Consistency_of_an_estimator)**.
 
 
+### Consistency
+
+An estimator $$ \hat\theta $$ is said to be consistent if it converges to the true value of
+the estimand as the number of examples increases.
+
+$$
+
+\lim_{m\to\infty} \hat\theta_{m}  \overset{p}{\to} \theta
+$$
+
+Where $$ \overset{p}{\to} $$ is the convergence in terms of probability (i.e) there is any $$ \epsilon > 0 $$
+such that:
+
+$$
+
+P(|\hat\theta_{m} - \theta| > \epsilon ) \to 0  \text{ as }  m \to \infty
+
+$$
+
+
+### Cost function using maximum likelihood estimation
+
+Let us try to derive the cost function using the maximum likelihood principle.
+Since the maximum likelihood principle says that the estimator should minimize the negative log likeihood,
+the cost function of our model can be written as:
+
+$$
+
+J(\theta) = E_{x \sim p_{data}}[log \   p_{model}(y | x)]
+
+$$
+
+where $$\theta$$ is the estimator that we are trying to find. Now the form of cost function varies
+from model to model depending on the form of $$ log \  p_{model}(y | x) $$.
+
+If $$ p_{model}(y | x) = N(y; \hat{y}(x;w), \sigma^{2})$$
+i.e Gaussian distribution with mean $$ \hat{y} $$ and variance as constant
+$$\sigma^{2}$$ then
+
+$$
+
+\begin{align}
+
+J(\theta) &= \dfrac{1}{m} * \sum_{i=0}^{m} log \   p_{model}(y | x) \\
+
+          &= \dfrac{1}{m} * \left((-m log \ \sigma) -  \dfrac {m}{2} log(2 \pi) -\sum_{i=0}^{m} \dfrac{\left||\hat{y}^{(i)} - y^{(i)}\right||^2}{2\sigma^{2}}\right)
+
+\end{align}
+
+$$
+
+Since the first two terms does not depend on the input it can be considered as constants and can be ignored.
+
+$$
+
+\begin{align}
+
+J(\theta) &= \dfrac{1}{m} * \left(\sum_{i=0}^{m} \dfrac{\left||\hat{y}^{(i)} - y^{(i)}\right||^2}{2\sigma^{2}}\right) \\
+          &= \dfrac{1}{2m} * \left(\sum_{i=0}^{m} \left||\hat{y}^{(i)} - y^{(i)}\right||^2\right)
+
+\end{align}
+$$
+
+
+which is same as the *Mean Square Error (MSE)* cost function used in linear regression.
+
+Similarly, for Bernoulli distribution
+$$ p_{model}(x) = p^{x}(1-p)^{x-1} $$ where $$ x \in {0,1} $$ it can be shown that
+
+$$
+J(\theta) = - \dfrac{1}{m} * \left(\sum_{i=0}^{m} y^{(i)} \ log(\hat{y}^{(i)}) + (1-y^{(i)}) \ log(1 - \hat{y}^{(i)}) \right)
+$$
+
+which is the cost function commonly used in [logistic regression](https://en.wikipedia.org/wiki/Logistic_regression)
+
 
 ### References
-
+* [Deep Learning Book](http://www.deeplearningbook.org/)
 * [https://en.wikipedia.org/wiki/Estimator](https://en.wikipedia.org/wiki/Estimator)
 * [https://en.wikipedia.org/wiki/Maximum_likelihood_estimation](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation)
