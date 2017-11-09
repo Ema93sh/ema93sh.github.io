@@ -9,7 +9,7 @@ tags:
 ---
 
 
-To understand what a maximum likelihood estimation first we need to understand the
+To understand *maximum likelihood estimation* (MLE), first we need to understand the
 concept of an estimator. In statistics, an estimator often called **point estimation** is used for calculating an
 estimate of the given quantity $$ \theta $$. Given an independent and identically distributed data
 $$ \left\{ x_1, x_2, ... , x_m \right\} $$, point estimation $$ \hat\theta $$ of an [estimand](https://en.wikipedia.org/wiki/Estimand) $$ \theta $$ can be formally defined as:
@@ -20,7 +20,7 @@ $$
 
 $$
 
-It is any function *g* that takes an input data and gives an estimate of $$ \theta $$. The function
+It is any function *g* that takes an input data *X* and gives an estimate of $$ \theta $$. The function
 $$ g $$ is very general and does not have any restriction on it. If the function $$ g $$ returns a
 function then the estimator is called **Function Estimator**. If suppose we know a function $$ f(x) $$
 that describes a relation between $$ x $$ and output $$ y $$ then function estimator of *f* is any estimator
