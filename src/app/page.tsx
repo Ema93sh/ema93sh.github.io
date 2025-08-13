@@ -23,6 +23,14 @@ export default function Home() {
             <li>
               <a
                 className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+                href="#startups"
+              >
+                Startups
+              </a>
+            </li>
+            <li>
+              <a
+                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
                 href="#projects"
               >
                 Projects
@@ -47,12 +55,16 @@ export default function Home() {
           </ul>
         </nav>
 
-        <div className="mb-8 rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm backdrop-blur dark:border-gray-800 dark:bg-gray-900/60">
+        <div className="mb-8 rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-[2px]">
+          <div className="rounded-3xl border border-gray-200 bg-white/80 p-6 shadow-sm backdrop-blur dark:border-gray-800 dark:bg-gray-900/60">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{resume.name}</h1>
               <p className="mt-1 text-base text-gray-600 dark:text-gray-300">
                 {resume.role} • {resume.location}
+              </p>
+              <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                Founder at Paintsy AI & Paisa Cash
               </p>
               <p className="mt-3 max-w-3xl text-sm leading-6 text-gray-700 dark:text-gray-200">
                 {resume.summary}
@@ -91,6 +103,7 @@ export default function Home() {
               </a>
             </div>
           </div>
+          </div>
         </div>
       </header>
 
@@ -125,6 +138,38 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </Section>
+
+        {/* Startups */}
+        <Section id="startups" title="Startups">
+          <div className="grid gap-6 sm:grid-cols-2">
+            {resume.startups.map((s, i) => (
+              <article
+                key={i}
+                className="flex flex-col items-center rounded-2xl border border-gray-200 bg-white/80 p-6 text-center shadow-sm transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900/60"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={s.logo}
+                  alt={`${s.name} logo`}
+                  width={64}
+                  height={64}
+                  className="mb-4 h-16 w-16 object-contain"
+                  loading="lazy"
+                />
+                <h3 className="text-lg font-semibold">{s.name}</h3>
+                <p className="mt-2 text-sm leading-6 text-gray-700 dark:text-gray-200">{s.blurb}</p>
+                <a
+                  className="mt-4 inline-flex w-fit items-center rounded-xl border border-gray-200 px-4 py-2 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
+                  href={s.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit Site
+                </a>
+              </article>
+            ))}
+          </div>
         </Section>
 
         {/* Projects */}
@@ -216,7 +261,7 @@ export default function Home() {
       </main>
 
       <footer className="mx-auto max-w-5xl px-4 pb-10 text-center text-xs text-gray-500 dark:text-gray-400">
-        © {new Date().getFullYear()} {resume.name}. Built from a résumé.
+        © {new Date().getFullYear()} {resume.name}. All rights reserved.
       </footer>
 
       {/* Back to top button */}

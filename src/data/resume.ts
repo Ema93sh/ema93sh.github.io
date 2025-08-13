@@ -129,6 +129,21 @@ export const resume = {
       stack: ["Python", "Django", "Semantic Web", "NLP", "SPARQL", "DBPedia"],
     },
   ],
+  startups: [
+    {
+      name: "Paintsy AI",
+      blurb:
+        "Create and download personalized coloring books and KDP-ready artifacts with Paintsy.ai. Turn your imagination into printable PDFs in seconds.",
+      link: "https://paintsy.ai",
+      logo: "https://paintsy.ai/favicon/favicon.svg",
+    },
+    {
+      name: "Paisa Cash",
+      blurb: "Next generation personal finance app for effortless budgeting and expense tracking.",
+      link: "https://paisa.cash",
+      logo: "/startups/paisa.svg",
+    },
+  ],
 } as const;
 
 export type Resume = typeof resume;
