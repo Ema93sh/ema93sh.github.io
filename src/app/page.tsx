@@ -3,8 +3,10 @@ import { Pill } from "@/components/Pill";
 import { Section } from "@/components/Section";
 
 export default function Home() {
+  const navLinkClass =
+    "rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500";
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-700 antialiased dark:from-gray-950 dark:via-gray-900 dark:to-gray-900 dark:text-gray-100">
+    <div className="min-h-screen bg-gray-50 text-gray-700 antialiased dark:bg-gray-950 dark:text-gray-100">
       {/* Header */}
       <header className="mx-auto max-w-5xl px-4 pt-10">
         <nav aria-label="Primary" className="mb-10 flex flex-wrap items-center justify-between gap-4">
@@ -13,49 +15,34 @@ export default function Home() {
           </a>
           <ul className="flex flex-wrap items-center gap-3 text-sm">
             <li>
-              <a
-                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
-                href="#experience"
-              >
+              <a className={navLinkClass} href="#experience">
                 Experience
               </a>
             </li>
             <li>
-              <a
-                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
-                href="#startups"
-              >
+              <a className={navLinkClass} href="#startups">
                 Startups
               </a>
             </li>
             <li>
-              <a
-                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
-                href="#projects"
-              >
+              <a className={navLinkClass} href="#projects">
                 Projects
               </a>
             </li>
             <li>
-              <a
-                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
-                href="#education"
-              >
+              <a className={navLinkClass} href="#education">
                 Education
               </a>
             </li>
             <li>
-              <a
-                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
-                href="#contact"
-              >
+              <a className={navLinkClass} href="#contact">
                 Contact
               </a>
             </li>
           </ul>
         </nav>
 
-        <div className="mb-8 rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-[2px]">
+        <div className="mb-8 rounded-3xl bg-gradient-to-r from-blue-600 to-teal-500 p-[2px]">
           <div className="rounded-3xl border border-gray-200 bg-white/80 p-6 shadow-sm backdrop-blur dark:border-gray-800 dark:bg-gray-900/60">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>

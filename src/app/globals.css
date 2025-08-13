@@ -24,3 +24,8 @@ body {
   font-family: var(--font-inter), sans-serif;
   transition: background 0.3s ease, color 0.3s ease;
 }
+
+a:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
