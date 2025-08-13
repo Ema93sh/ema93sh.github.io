@@ -4,7 +4,7 @@ import { Section } from "@/components/Section";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-800 antialiased dark:from-gray-950 dark:to-gray-900 dark:text-gray-100">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-700 antialiased dark:from-gray-950 dark:via-gray-900 dark:to-gray-900 dark:text-gray-100">
       {/* Header */}
       <header className="mx-auto max-w-5xl px-4 pt-10">
         <nav aria-label="Primary" className="mb-10 flex flex-wrap items-center justify-between gap-4">
@@ -13,29 +13,41 @@ export default function Home() {
           </a>
           <ul className="flex flex-wrap items-center gap-3 text-sm">
             <li>
-              <a className="rounded-md px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" href="#experience">
+              <a
+                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+                href="#experience"
+              >
                 Experience
               </a>
             </li>
             <li>
-              <a className="rounded-md px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" href="#projects">
+              <a
+                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+                href="#projects"
+              >
                 Projects
               </a>
             </li>
             <li>
-              <a className="rounded-md px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" href="#education">
+              <a
+                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+                href="#education"
+              >
                 Education
               </a>
             </li>
             <li>
-              <a className="rounded-md px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" href="#contact">
+              <a
+                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+                href="#contact"
+              >
                 Contact
               </a>
             </li>
           </ul>
         </nav>
 
-        <div className="mb-8 rounded-2xl border bg-white/70 p-6 shadow-sm backdrop-blur dark:border-gray-800 dark:bg-gray-900/60">
+        <div className="mb-8 rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm backdrop-blur dark:border-gray-800 dark:bg-gray-900/60">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{resume.name}</h1>
@@ -51,7 +63,7 @@ export default function Home() {
                 href={resume.contacts.website}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-xl border px-4 py-2 text-sm hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
+                className="rounded-xl border border-gray-200 px-4 py-2 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
               >
                 Website
               </a>
@@ -59,7 +71,7 @@ export default function Home() {
                 href={resume.contacts.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-xl border px-4 py-2 text-sm hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
+                className="rounded-xl border border-gray-200 px-4 py-2 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
               >
                 LinkedIn
               </a>
@@ -67,7 +79,7 @@ export default function Home() {
                 href={resume.contacts.github}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-xl border px-4 py-2 text-sm hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
+                className="rounded-xl border border-gray-200 px-4 py-2 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
               >
                 GitHub
               </a>
@@ -87,7 +99,10 @@ export default function Home() {
         <Section id="experience" title="Work Experience">
           <ul className="space-y-6">
             {resume.experience.map((job, i) => (
-              <li key={i} className="rounded-2xl border p-6 shadow-sm dark:border-gray-800">
+              <li
+                key={i}
+                className="rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900/60"
+              >
                 <div className="flex flex-col justify-between gap-2 md:flex-row md:items-baseline">
                   <div>
                     <h3 className="text-lg font-semibold">
@@ -118,7 +133,7 @@ export default function Home() {
             {resume.projects.map((p, i) => (
               <article
                 key={i}
-                className="flex flex-col justify-between rounded-2xl border p-6 shadow-sm dark:border-gray-800"
+                className="flex flex-col justify-between rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900/60"
               >
                 <div>
                   <h3 className="text-lg font-semibold">{p.name}</h3>
@@ -130,7 +145,7 @@ export default function Home() {
                   </div>
                 </div>
                 <a
-                  className="mt-4 inline-flex w-fit items-center rounded-xl border px-4 py-2 text-sm hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
+                  className="mt-4 inline-flex w-fit items-center rounded-xl border border-gray-200 px-4 py-2 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
                   href={p.link}
                   target="_blank"
                   rel="noreferrer"
@@ -146,7 +161,10 @@ export default function Home() {
         <Section id="education" title="Education">
           <ul className="grid gap-6 sm:grid-cols-2">
             {resume.education.map((e, i) => (
-              <li key={i} className="rounded-2xl border p-6 shadow-sm dark:border-gray-800">
+              <li
+                key={i}
+                className="rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900/60"
+              >
                 <h3 className="text-base font-semibold">{e.school}</h3>
                 <p className="mt-1 text-sm">{e.degree}</p>
                 <p className="text-sm text-gray-600 dark:text-gray-300">{e.details}</p>
@@ -158,16 +176,16 @@ export default function Home() {
 
         {/* Contact */}
         <Section id="contact" title="Contact">
-          <div className="rounded-2xl border p-6 shadow-sm dark:border-gray-800">
+          <div className="rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900/60">
             <div className="grid gap-4 sm:grid-cols-2">
               <a
-                className="rounded-xl border px-4 py-3 text-sm hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
+                className="rounded-xl border border-gray-200 px-4 py-3 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
                 href={`mailto:${resume.contacts.email}`}
               >
                 {resume.contacts.email}
               </a>
               <a
-                className="rounded-xl border px-4 py-3 text-sm hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
+                className="rounded-xl border border-gray-200 px-4 py-3 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
                 href={resume.contacts.website}
                 target="_blank"
                 rel="noreferrer"
@@ -176,7 +194,7 @@ export default function Home() {
               </a>
               <div className="flex flex-wrap gap-2">
                 <a
-                  className="rounded-xl border px-4 py-3 text-sm hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
+                  className="rounded-xl border border-gray-200 px-4 py-3 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
                   href={resume.contacts.linkedin}
                   target="_blank"
                   rel="noreferrer"
@@ -184,7 +202,7 @@ export default function Home() {
                   LinkedIn
                 </a>
                 <a
-                  className="rounded-xl border px-4 py-3 text-sm hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
+                  className="rounded-xl border border-gray-200 px-4 py-3 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
                   href={resume.contacts.github}
                   target="_blank"
                   rel="noreferrer"
@@ -204,7 +222,7 @@ export default function Home() {
       {/* Back to top button */}
       <a
         href="#top"
-        className="fixed bottom-5 right-5 inline-flex items-center justify-center rounded-full border bg-white/80 p-3 text-xs shadow hover:bg-white dark:border-gray-800 dark:bg-gray-900/80"
+        className="fixed bottom-5 right-5 inline-flex items-center justify-center rounded-full border border-gray-200 bg-white p-3 text-xs shadow-md transition-colors hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-800"
         aria-label="Back to top"
       >
         ↑
