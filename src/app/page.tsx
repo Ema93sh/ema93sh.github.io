@@ -1,6 +1,8 @@
 import { resume } from "@/data/resume";
 import { Pill } from "@/components/Pill";
 import { Section } from "@/components/Section";
+import { Card } from "@/components/Card";
+import { ButtonLink } from "@/components/ButtonLink";
 
 export default function Home() {
   const navLinkClass =
@@ -8,90 +10,71 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-700 antialiased dark:bg-gray-950 dark:text-gray-100">
       {/* Header */}
-      <header className="mx-auto max-w-5xl px-4 pt-10">
-        <nav aria-label="Primary" className="mb-10 flex flex-wrap items-center justify-between gap-4">
-          <a href="#top" className="text-lg font-semibold hover:opacity-80" id="top">
-            {resume.name}
-          </a>
-          <ul className="flex flex-wrap items-center gap-3 text-sm">
-            <li>
-              <a className={navLinkClass} href="#experience">
-                Experience
-              </a>
-            </li>
-            <li>
-              <a className={navLinkClass} href="#startups">
-                Startups
-              </a>
-            </li>
-            <li>
-              <a className={navLinkClass} href="#projects">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a className={navLinkClass} href="#education">
-                Education
-              </a>
-            </li>
-            <li>
-              <a className={navLinkClass} href="#contact">
-                Contact
-              </a>
-            </li>
-          </ul>
+      <header className="mx-auto max-w-5xl px-4 pt-4">
+        <nav
+          aria-label="Primary"
+          className="sticky top-3 z-40 mb-8 rounded-2xl border border-gray-200/70 bg-white/70 px-3 py-2 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-gray-800/70 dark:bg-gray-950/60"
+        >
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <a href="#top" className="text-sm font-semibold tracking-tight hover:opacity-80" id="top">
+              {resume.name}
+            </a>
+            <ul className="flex flex-wrap items-center gap-1 text-sm">
+              <li>
+                <a className={navLinkClass} href="#experience">
+                  Experience
+                </a>
+              </li>
+              <li>
+                <a className={navLinkClass} href="#startups">
+                  Startups
+                </a>
+              </li>
+              <li>
+                <a className={navLinkClass} href="#projects">
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a className={navLinkClass} href="#education">
+                  Education
+                </a>
+              </li>
+              <li>
+                <a className={navLinkClass} href="#contact">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
         </nav>
 
-        <div className="mb-8 rounded-3xl bg-gradient-to-r from-blue-600 to-teal-500 p-[2px]">
-          <div className="rounded-3xl border border-gray-200 bg-white/80 p-6 shadow-sm backdrop-blur dark:border-gray-800 dark:bg-gray-900/60">
+        <Card className="mb-8 p-6 sm:p-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{resume.name}</h1>
               <p className="mt-1 text-base text-gray-600 dark:text-gray-300">
                 {resume.role} • {resume.location}
               </p>
-              <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                Founder at Paintsy AI & Paisa Cash
-              </p>
-              <p className="mt-3 max-w-3xl text-sm leading-6 text-gray-700 dark:text-gray-200">
-                {resume.summary}
-              </p>
+              <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">Founder at Paintsy AI & Paisa Cash</p>
+              <p className="mt-3 max-w-3xl text-sm leading-6 text-gray-700 dark:text-gray-200">{resume.summary}</p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              <a
-                href={resume.contacts.website}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-xl border border-gray-200 px-4 py-2 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
-              >
+              <ButtonLink href={resume.contacts.website} target="_blank" rel="noreferrer">
                 Website
-              </a>
-              <a
-                href={resume.contacts.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-xl border border-gray-200 px-4 py-2 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
-              >
+              </ButtonLink>
+              <ButtonLink href={resume.contacts.linkedin} target="_blank" rel="noreferrer">
                 LinkedIn
-              </a>
-              <a
-                href={resume.contacts.github}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-xl border border-gray-200 px-4 py-2 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
-              >
+              </ButtonLink>
+              <ButtonLink href={resume.contacts.github} target="_blank" rel="noreferrer">
                 GitHub
-              </a>
-              <a
-                href={`mailto:${resume.contacts.email}`}
-                className="rounded-xl bg-black px-4 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black"
-              >
+              </ButtonLink>
+              <ButtonLink href={`mailto:${resume.contacts.email}`} variant="primary">
                 Email
-              </a>
+              </ButtonLink>
             </div>
           </div>
-          </div>
-        </div>
+        </Card>
       </header>
 
       <main className="mx-auto max-w-5xl px-4 pb-20">
@@ -101,7 +84,7 @@ export default function Home() {
             {resume.experience.map((job, i) => (
               <li
                 key={i}
-                className="rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900/60"
+                className="rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900/60"
               >
                 <div className="flex flex-col justify-between gap-2 md:flex-row md:items-baseline">
                   <div>
@@ -146,14 +129,9 @@ export default function Home() {
                 />
                 <h3 className="text-lg font-semibold">{s.name}</h3>
                 <p className="mt-2 text-sm leading-6 text-gray-700 dark:text-gray-200">{s.blurb}</p>
-                <a
-                  className="mt-4 inline-flex w-fit items-center rounded-xl border border-gray-200 px-4 py-2 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
-                  href={s.link}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <ButtonLink className="mt-4" href={s.link} target="_blank" rel="noreferrer">
                   Visit Site
-                </a>
+                </ButtonLink>
               </article>
             ))}
           </div>
@@ -176,14 +154,9 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
-                <a
-                  className="mt-4 inline-flex w-fit items-center rounded-xl border border-gray-200 px-4 py-2 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
-                  href={p.link}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <ButtonLink className="mt-4" href={p.link} target="_blank" rel="noreferrer">
                   View on GitHub
-                </a>
+                </ButtonLink>
               </article>
             ))}
           </div>
@@ -210,37 +183,19 @@ export default function Home() {
         <Section id="contact" title="Contact">
           <div className="rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900/60">
             <div className="grid gap-4 sm:grid-cols-2">
-              <a
-                className="rounded-xl border border-gray-200 px-4 py-3 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
-                href={`mailto:${resume.contacts.email}`}
-              >
+              <ButtonLink className="px-4 py-3" href={`mailto:${resume.contacts.email}`}>
                 {resume.contacts.email}
-              </a>
-              <a
-                className="rounded-xl border border-gray-200 px-4 py-3 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
-                href={resume.contacts.website}
-                target="_blank"
-                rel="noreferrer"
-              >
+              </ButtonLink>
+              <ButtonLink className="px-4 py-3" href={resume.contacts.website} target="_blank" rel="noreferrer">
                 {resume.contacts.website}
-              </a>
+              </ButtonLink>
               <div className="flex flex-wrap gap-2">
-                <a
-                  className="rounded-xl border border-gray-200 px-4 py-3 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
-                  href={resume.contacts.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <ButtonLink className="px-4 py-3" href={resume.contacts.linkedin} target="_blank" rel="noreferrer">
                   LinkedIn
-                </a>
-                <a
-                  className="rounded-xl border border-gray-200 px-4 py-3 text-sm transition-colors hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800"
-                  href={resume.contacts.github}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                </ButtonLink>
+                <ButtonLink className="px-4 py-3" href={resume.contacts.github} target="_blank" rel="noreferrer">
                   GitHub
-                </a>
+                </ButtonLink>
               </div>
             </div>
           </div>
@@ -254,7 +209,7 @@ export default function Home() {
       {/* Back to top button */}
       <a
         href="#top"
-        className="fixed bottom-5 right-5 inline-flex items-center justify-center rounded-full border border-gray-200 bg-white p-3 text-xs shadow-md transition-colors hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-800"
+        className="fixed bottom-5 right-5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-xs shadow-md ring-1 ring-inset ring-white/60 transition-colors hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-900 dark:ring-gray-900/40 dark:hover:bg-gray-800"
         aria-label="Back to top"
       >
         ↑
