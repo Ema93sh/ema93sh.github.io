@@ -64,13 +64,13 @@ export default function Home() {
               <p className="mt-3 max-w-3xl text-sm leading-6 text-gray-700 dark:text-gray-200">{resume.summary}</p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              <ButtonLink href={resume.contacts.website} target="_blank" rel="noreferrer">
+              <ButtonLink href={resume.contacts.website} target="_blank">
                 Website
               </ButtonLink>
-              <ButtonLink href={resume.contacts.linkedin} target="_blank" rel="noreferrer">
+              <ButtonLink href={resume.contacts.linkedin} target="_blank">
                 LinkedIn
               </ButtonLink>
-              <ButtonLink href={resume.contacts.github} target="_blank" rel="noreferrer">
+              <ButtonLink href={resume.contacts.github} target="_blank">
                 GitHub
               </ButtonLink>
               <ButtonLink href={`mailto:${resume.contacts.email}`} variant="primary">
@@ -133,7 +133,7 @@ export default function Home() {
                 />
                 <h3 className="text-lg font-semibold">{s.name}</h3>
                 <p className="mt-2 text-sm leading-6 text-gray-700 dark:text-gray-200">{s.blurb}</p>
-                <ButtonLink className="mt-4" href={s.link} target="_blank" rel="noreferrer">
+                <ButtonLink className="mt-4" href={s.link} target="_blank">
                   Visit Site
                 </ButtonLink>
               </article>
@@ -158,7 +158,7 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
-                <ButtonLink className="mt-4" href={p.link} target="_blank" rel="noreferrer">
+                <ButtonLink className="mt-4" href={p.link} target="_blank">
                   View on GitHub
                 </ButtonLink>
               </article>
@@ -190,14 +190,14 @@ export default function Home() {
               <ButtonLink className="px-4 py-3" href={`mailto:${resume.contacts.email}`}>
                 {resume.contacts.email}
               </ButtonLink>
-              <ButtonLink className="px-4 py-3" href={resume.contacts.website} target="_blank" rel="noreferrer">
+              <ButtonLink className="px-4 py-3" href={resume.contacts.website} target="_blank">
                 {resume.contacts.website}
               </ButtonLink>
               <div className="flex flex-wrap gap-2">
-                <ButtonLink className="px-4 py-3" href={resume.contacts.linkedin} target="_blank" rel="noreferrer">
+                <ButtonLink className="px-4 py-3" href={resume.contacts.linkedin} target="_blank">
                   LinkedIn
                 </ButtonLink>
-                <ButtonLink className="px-4 py-3" href={resume.contacts.github} target="_blank" rel="noreferrer">
+                <ButtonLink className="px-4 py-3" href={resume.contacts.github} target="_blank">
                   GitHub
                 </ButtonLink>
               </div>
