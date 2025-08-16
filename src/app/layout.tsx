@@ -3,8 +3,29 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ema93sh.github.io"),
   title: "Magesh Kumar Murali",
   description: "Senior Software Engineer",
+  openGraph: {
+    title: "Magesh Kumar Murali",
+    description: "Senior Software Engineer",
+    url: "https://ema93sh.github.io",
+    images: [
+      {
+        url: "https://ema93sh.github.io/globe.svg",
+        width: 1200,
+        height: 630,
+        alt: "Magesh Kumar Murali",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Magesh Kumar Murali",
+    description: "Senior Software Engineer",
+    images: ["https://ema93sh.github.io/globe.svg"],
+    site: "https://ema93sh.github.io",
+  },
 };
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
