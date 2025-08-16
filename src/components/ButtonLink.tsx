@@ -22,8 +22,14 @@ export function ButtonLink({
     variant === "primary"
       ? "bg-black text-white hover:opacity-90 dark:bg-white dark:text-black"
       : "border border-gray-200 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800";
+  const computedRel = rel ?? (target === "_blank" ? "noopener noreferrer" : undefined);
   return (
-    <a href={href} target={target} rel={rel} className={`${base} ${styles} ${className ?? ""}`}>
+    <a
+      href={href}
+      target={target}
+      rel={computedRel}
+      className={`${base} ${styles} ${className ?? ""}`}
+    >
       {children}
     </a>
   );
