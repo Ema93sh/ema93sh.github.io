@@ -3,6 +3,7 @@ import { Pill } from "@/components/Pill";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
 import { ButtonLink } from "@/components/ButtonLink";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Home() {
   const navLinkClass =
@@ -44,6 +45,9 @@ export default function Home() {
                 <a className={navLinkClass} href="#contact">
                   Contact
                 </a>
+              </li>
+              <li>
+                <ThemeToggle />
               </li>
             </ul>
           </div>
