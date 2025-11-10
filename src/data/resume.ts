@@ -9,7 +9,7 @@ export const resume = {
     github: "https://github.com/Ema93sh",
   },
   summary:
-    "Senior Software Engineer with a background spanning large-scale ML systems, big data platforms, and developer tooling. Built Prime Video's next‑gen recommendation engine, TB‑scale pipelines, and cost‑saving ML infra; prior experience at Pivotal Labs/VMware shipping cloud‑native systems; research in deep reinforcement learning at Oregon State University.",
+    "Senior Software Engineer with a background spanning large-scale ML systems, big data platforms, and developer tooling. Built Prime Video's next‑gen recommendation engine, TB‑scale pipelines, a deep research agent used by hundreds of Prime Video employees, and cost‑saving ML infra; prior experience at Pivotal Labs/VMware shipping cloud‑native systems; research in deep reinforcement learning at Oregon State University.",
   experience: [
     {
       title: "Senior Software Engineer",
@@ -19,6 +19,7 @@ export const resume = {
       highlights: [
         "Built the next‑generation content recommendation engine increasing overall stream time by 5%",
         "Created PV Page Simulator for rapid prototyping of page optimization strategies",
+        "Built a deep research agent for Prime Video data analytics adopted by hundreds of employees and dramatically improving organizational efficiency",
         "Designed a framework to automate daily training, deployment, versioning, and monitoring of ML models",
         "Scaled an ML pipeline to run TB‑scale inference in ~30 minutes; optimized training time from 12h → 2h via GPU utilization",
         "Identified cross‑component optimizations saving ≈ $1.4M per year",
